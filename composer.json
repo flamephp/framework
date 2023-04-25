@@ -1,0 +1,48 @@
+{
+    "name": "flamephp/framework",
+    "license": "Apache-2.0",
+    "require": {
+        "php": "^8.1",
+        "ext-curl": "*",
+        "ext-fileinfo": "*",
+        "ext-gd": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*",
+        "ext-redis": "*",
+        "ext-sodium": "*",
+        "aliyuncs/oss-sdk-php": "^2.6",
+        "endroid/qr-code": "^4.8",
+        "firebase/php-jwt": "^6.4",
+        "intervention/image": "^2.7",
+        "nesbot/carbon": "^2.66",
+        "overtrue/easy-sms": "^2.4",
+        "overtrue/pinyin": "^5.0",
+        "overtrue/socialite": "^4.8",
+        "phpoffice/phpspreadsheet": "^1.28",
+        "robmorgan/phinx": "0.13.4",
+        "symfony/console": "^6.2",
+        "symfony/mailer": "^6.2",
+        "symfony/messenger": "^6.2",
+        "symfony/twig-bridge": "^6.2",
+        "topthink/think-orm": "3.0.8",
+        "vlucas/phpdotenv": "^5.5",
+        "w7corp/easywechat": "^6.11",
+        "workerman/gateway-worker": "^3.0",
+        "yansongda/pay": "^3.2.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flame\\": "src/"
+        },
+        "files": [
+            "src/Support/helpers.php"
+        ]
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
