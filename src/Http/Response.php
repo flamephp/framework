@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Flame\Http;
 
+use Flame\Cookie\Cookie;
 use InvalidArgumentException;
 
 abstract class Response
