@@ -55,15 +55,15 @@ class GenRepositoryCommand extends Command
 
 declare(strict_types=1);
 
-namespace app\\service\\input;
+namespace App\\Services\\Input;
 
-use app\\entity\\$name;
+use App\\Entities\\$name;
 
 class {$name}Input extends $name
 {
 }
 EOF;
-        file_put_contents(app_path('service/input/'.$name.'Input.php'), $content);
+        file_put_contents(app_path('Services/Input/'.$name.'Input.php'), $content);
     }
 
     private function outputTpl(string $name): void
@@ -75,15 +75,15 @@ EOF;
 
 declare(strict_types=1);
 
-namespace app\\service\\output;
+namespace App\\Services\\Output;
 
-use app\\entity\\$name;
+use App\\Entities\\$name;
 
 class {$name}Output extends $name
 {
 }
 EOF;
-        file_put_contents(app_path('service/output/'.$name.'Output.php'), $content);
+        file_put_contents(app_path('Services/Output/'.$name.'Output.php'), $content);
     }
 
     private function repositoryTpl(string $name): void
@@ -97,9 +97,9 @@ EOF;
 
 declare(strict_types=1);
 
-namespace app\\repository;
+namespace App\\Repositories;
 
-use app\\entity\\{$name};
+use App\\Entities\\{$name};
 use Exception;
 
 class {$name}Repository extends CurdRepository
@@ -188,13 +188,13 @@ class {$name}Repository extends CurdRepository
      */
     protected function model(string \$modelName = '$name')
     {
-        \$model = '\\\\app\\\\model\\\\'. \$modelName .'Model';
+        \$model = '\\\\App\\\\Models\\\\'. \$modelName .'Model';
 
         return new \$model();
     }
 }
 EOF;
-        file_put_contents(app_path('repository/'.$name.'Repository.php'), $content);
+        file_put_contents(app_path('repositories/'.$name.'Repository.php'), $content);
     }
 
     private function serviceTpl(string $name): void
@@ -204,11 +204,11 @@ EOF;
 
 declare(strict_types=1);
 
-namespace app\\service;
+namespace App\\Services;
 
-use app\\repository\\{$name}Repository;
-use app\\service\\input\\{$name}Input;
-use app\\service\\output\\{$name}Output;
+use App\\Repositories\\{$name}Repository;
+use App\\Services\\Input\\{$name}Input;
+use App\\Services\\Output\\{$name}Output;
 use Exception;
 
 class {$name}Service extends {$name}Repository
@@ -216,7 +216,7 @@ class {$name}Service extends {$name}Repository
 
 }
 EOF;
-        $serviceFile = app_path('service/'.$name.'Service.php');
+        $serviceFile = app_path('Services/'.$name.'Service.php');
         if (! file_exists($serviceFile)) {
             file_put_contents($serviceFile, $content);
         }

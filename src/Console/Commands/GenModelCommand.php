@@ -132,7 +132,7 @@ EOF;
 
 declare(strict_types=1);
 
-namespace app\\model;
+namespace App\\Models;
 
 use think\model\concern\SoftDelete;
 
@@ -175,7 +175,7 @@ $fieldStr    ];
 }
 
 EOF;
-        file_put_contents(app_path('model/'.$className.'Model.php'), $content);
+        file_put_contents(app_path('Models/'.$className.'Model.php'), $content);
     }
 
     private function entityTpl($className, $columns): void
@@ -200,9 +200,9 @@ EOF;
 
 declare(strict_types=1);
 
-namespace app\\entity;
+namespace App\\Entities;
 
-use base\support\ArrayObject;
+use Flame\Support\ArrayObject;
 use OpenApi\Attributes as OA;
 
 #[OA\Schema(schema: '{$className}Schema')]
@@ -211,6 +211,6 @@ class {$className}
     use ArrayObject;
 {$fields}}
 EOF;
-        file_put_contents(app_path('entity/'.$className.'.php'), $content);
+        file_put_contents(app_path('Entities/'.$className.'.php'), $content);
     }
 }

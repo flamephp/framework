@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Flame\Console\Commands;
 
-use Flame\Facade\DB;
-use Flame\Log;
 use Exception;
+use Flame\Facade\Queue;
+use Flame\Log\Log;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

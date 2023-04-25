@@ -71,7 +71,7 @@ abstract class Response
      */
     public static function create($data = '', string $type = 'html', int $code = 200): Response
     {
-        $class = str_contains($type, '\\') ? $type : '\\base\\response\\'.ucfirst(strtolower($type));
+        $class = str_contains($type, '\\') ? $type : '\\Flame\\Response\\'.ucfirst(strtolower($type));
 
         return new $class($data, $code);
     }

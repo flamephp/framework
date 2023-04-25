@@ -32,12 +32,12 @@ class Kernel extends Application
         ]);
 
         // Load commands
-        $this->registerCommands(__DIR__.'/commands/*Command.php');
+        $this->registerCommands(__DIR__.'/Commands/*Command.php');
     }
 
-    public function registerCommands(string $path, string $namespace = 'base'): void
+    public function registerCommands(string $path, string $namespace = 'Flame'): void
     {
-        $pattern = '/(console\/commands\/.+?Command)\.php/';
+        $pattern = '/(Console\/Commands\/.+?Command)\.php/';
         foreach (glob($path) as $file) {
             preg_match($pattern, str_replace('\\', '/', $file), $matches);
             if (isset($matches[1])) {
